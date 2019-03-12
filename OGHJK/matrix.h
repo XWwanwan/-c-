@@ -5,27 +5,27 @@
 #include<iostream>
 using namespace std;
 
-class matrixxx
+class matrix
 {
 public:
-    matrixxx();
+    matrix();
 private:
     int rows, cols;
     double **p;
     void initialize();//初始化矩阵
 
 public:
-    matrixxx(int, int);
-    matrixxx(int, int, double);//预配分空间
-    virtual ~matrixxx();//析构函数应当是虚函数，除非此类不用做基类
+    matrix(int, int);
+    matrix(int, int, double);//预配分空间
+    virtual ~matrix();//析构函数应当是虚函数，除非此类不用做基类
 
 
-    matrixxx& operator=(const matrixxx&);//矩阵的复制
-    matrixxx& operator=(double *);//将数组的值传给矩阵
-    matrixxx& operator+=(const matrixxx&);//矩阵的+=操作
-    matrixxx& operator-=(const matrixxx&);//-=
-    matrixxx& operator*=(const matrixxx&);//*=
-    matrixxx operator*(const matrixxx & m)const;
+    matrix& operator=(const matrix&);//矩阵的复制
+    matrix& operator=(double *);//将数组的值传给矩阵
+    matrix& operator+=(const matrix&);//矩阵的+=操作
+    matrix& operator-=(const matrix&);//-=
+    matrix& operator*=(const matrix&);//*=
+    matrix operator*(const matrix & m)const;
 
     void Show() const;//矩阵显示
 
@@ -33,7 +33,7 @@ public:
     int row() const;
     int col() const;
 
-    friend istream& operator>>(istream&, matrixxx&);//实现矩阵的输入
+    friend istream& operator>>(istream&, matrix&);//实现矩阵的输入
 
 
 };
