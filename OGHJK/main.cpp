@@ -1,8 +1,11 @@
-#include <QCoreApplication>
-
-int main(int argc, char *argv[])
+#include "matrix.h"
+using namespace std;
+int main()
 {
-    QCoreApplication a(argc, argv);
-
-    return a.exec();
+    matrix A = matrix(3, 3);
+    cin >> A;
+    matrix b = matrix(3, 1);
+    cin >> b;
+   matrix x=b;
+    x.Show();return 0;
 }
