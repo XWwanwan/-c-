@@ -109,39 +109,4 @@ double OverNightPackage::calculataCost()
     double newUnitCost = Package::calculateCost() + Night_Price;
     return newUnitCost * Package::getMyWeight();
 }
-//double OvernightPackage::overnightCost() const
-//{
-//    return mOvernightCost;
-//}
 
-//void OvernightPackage::setOvernightCost(double overnightCost)
-//{
-//    mOvernightCost = ((overnightCost < 0) ? 0 : overnightCost);
-//}
-
-//TwoDayPackage::TwoDayPackage(const PersonContact &addresser,
-//                             const PersonContact &receiver,
-//                             double               weight,
-//                             double               unitCost,
-//                             double               twoDayCost)
-//    : Package(addresser, receiver, weight, unitCost)
-//{
-//    setTwoDayCost(twoDayCost);
-//}
-
-//double TwoDayPackage::calculateCost()
-//{
-//    // double base = unitCost() * weight();
-//    double base = Package::calculateCost();
-//    return base + mTwoDayCost;
-//}
-
-//double TwoDayPackage::twoDayCost() const
-//{
-//    return mTwoDayCost;
-//}
-
-//void TwoDayPackage::setTwoDayCost(double twoDayCost)
-//{
-//    mTwoDayCost = ((twoDayCost < 0) ? 0 : twoDayCost);
-//}
