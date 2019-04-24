@@ -1,7 +1,6 @@
 ﻿#include <iostream>
 #include "Employee.h" // Employee class definition
-
-#include<iostream>
+#include "ctime"
 using namespace std;
 // constructor
 Employee::Employee( const string &first, const string &last,
@@ -109,6 +108,7 @@ BasePlusCommissionEmployee::BasePlusCommissionEmployee(
    setBaseSalary( salary ); // validate and store base salary
 } // end BasePlusCommissionEmployee constructor
 
+
 // set base salary
 void BasePlusCommissionEmployee::setBaseSalary( double salary )
 {
@@ -143,16 +143,30 @@ void Employee::print() const
    cout << getFirstName() << ' ' << getLastName()
       << "\nsocial security number: " << getSocialSecurityNumber();
 } // end function print
+EmployeePlus::EmployeePlus(const string &first, const string &last, const string &ssn,
+                           double sales, double rate, double salary , Date d):BasePlusCommissionEmployee( first, last, ssn, sales, rate,salary)
+{
+
+    setBirthday(d);
+}
 void EmployeePlus::setBirthday(Date day)
 {
     birthDay = day;
 }
+
 Date EmployeePlus::getBirthday()
 {
     return birthDay;
 }
+
 double EmployeePlus::earnings() const
 {
+time_t now = time(0);
+cout << "1970 到目前经过秒数:" << now << endl;
+
+
+
+
  return 100+CommissionEmployee::earnings();
 }
 void EmployeePlus::print()const

@@ -2,7 +2,7 @@
 #define EMPLOYEE_H
 #include"Date.h"
 #include <string> // C++ standard string class
-
+using namespace std;
 class Employee
 {
 public:
@@ -68,11 +68,13 @@ class EmployeePlus:public BasePlusCommissionEmployee
 {
 
 public:
-   EmployeePlus();
+   EmployeePlus(const string &first, const string &last, const string &ssn,
+                double sales, double rate, double salary , Date d);
    virtual double earnings() const = 0;
    virtual void print() const;
    void setBirthday(Date day);
    Date getBirthday();
+   bool IsBirth;
 
 private:
     Date birthDay;
